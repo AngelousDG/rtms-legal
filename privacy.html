@@ -6,6 +6,7 @@
 <title>Política de Privacidad — RTMS</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 15px;
@@ -17,290 +18,496 @@ body {
   padding: 3rem 1.5rem;
 }
 h1 { font-size: 28px; font-weight: 700; color: #1d6b3e; margin-bottom: 0.4rem; }
-.subtitle { font-size: 14px; color: #888; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e8f5ee; }
-h2 { font-size: 18px; font-weight: 700; color: #1d6b3e; margin: 2.5rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e8f5ee; }
+.subtitle { font-size: 14px; color: #666; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e8f5ee; }
+h2 { font-size: 18px; font-weight: 700; color: #1d6b3e; margin: 2.5rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #e8f5ee; scroll-margin-top: 1rem; }
 h3 { font-size: 15px; font-weight: 600; color: #1a5c34; margin: 1.5rem 0 0.5rem; }
 p { margin-bottom: 1rem; color: #333; }
 ul, ol { margin: 0.5rem 0 1rem 1.5rem; color: #333; }
 li { margin-bottom: 0.4rem; line-height: 1.6; }
 .highlight-box { background: #f0faf5; border-left: 4px solid #1d6b3e; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 1.2rem 0; }
-.highlight-box p { margin: 0; font-size: 14px; color: #1a5c34; }
+.highlight-box p, .highlight-box li { font-size: 14px; color: #1a5c34; }
+.highlight-box p { margin: 0; }
+.highlight-box ul { margin-bottom: 0; }
 .warning-box { background: #faeeda; border-left: 4px solid #854f0b; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 1.2rem 0; }
 .warning-box p { margin: 0; font-size: 14px; color: #633806; }
-.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 1rem 0 1.5rem; }
+.warning-box p + p { margin-top: 0.6rem; }
+.danger-box { background: #fdecea; border-left: 4px solid #b3261e; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 1.2rem 0; }
+.danger-box p { margin: 0; font-size: 14px; color: #7a1a14; }
+.danger-box p + p { margin-top: 0.6rem; }
+.table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0 1.5rem; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table-wrap .data-table { min-width: 460px; }
 .data-table th { background: #1d6b3e; color: #fff; padding: 8px 12px; text-align: left; font-weight: 600; }
 .data-table td { padding: 8px 12px; border-bottom: 1px solid #e8e8e4; vertical-align: top; }
 .data-table tr:last-child td { border-bottom: none; }
-.section-num { display: inline-block; background: #1d6b3e; color: #fff; font-size: 12px; font-weight: 700; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; margin-right: 8px; }
-.footer-box { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid #e8f5ee; font-size: 13px; color: #888; }
+.section-num { display: inline-block; background: #1d6b3e; color: #fff; font-size: 12px; font-weight: 700; min-width: 24px; height: 24px; border-radius: 12px; padding: 0 6px; text-align: center; line-height: 24px; margin-right: 8px; }
+.footer-box { margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid #e8f5ee; font-size: 13px; color: #666; }
 .toc { background: #f8f8f6; border-radius: 10px; padding: 16px 20px; margin-bottom: 2.5rem; }
 .toc-title { font-size: 13px; font-weight: 700; color: #666; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 10px; }
 .toc a { display: block; font-size: 13px; color: #1d6b3e; text-decoration: none; padding: 3px 0; }
 .toc a:hover { text-decoration: underline; }
-a { color: #1d6b3e; }
+a { color: #1d6b3e; overflow-wrap: anywhere; }
+.todo { background: #fff3b0; color: #5c4600; padding: 0 4px; border-radius: 3px; font-weight: 600; }
+@media (max-width: 600px) {
+  body { padding: 2rem 1rem; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 17px; }
+}
+@media print {
+  body { max-width: none; padding: 0; }
+  .toc { display: none; }
+  .table-wrap { overflow: visible; }
+}
 </style>
 </head>
 <body>
 
 <h1>Política de Privacidad</h1>
-<p class="subtitle">RTMS — Rugby Team Manager System &nbsp;·&nbsp; Última actualización: mayo de 2026 &nbsp;·&nbsp; Versión 1.1</p>
+<p class="subtitle">RTMS — Rugby Team Manager System &nbsp;·&nbsp; Última actualización: 16 de octubre de 2026 &nbsp;·&nbsp; Versión 1.2</p>
 
 <div class="highlight-box">
-  <p><strong>En resumen:</strong> esta app está diseñada para la gestión interna de clubes de rugby argentinos. Cada club es el responsable de los datos que carga en la plataforma. Solo recopilamos los datos necesarios para la gestión deportiva y administrativa. No vendemos datos ni mostramos publicidad.</p>
+  <p><strong>En resumen:</strong> RTMS es una plataforma para la gestión interna de clubes de rugby argentinos. Cada club es el responsable de los datos que carga y RTMS los trata por cuenta del club, como encargado. Solo se tratan los datos necesarios para la gestión deportiva y administrativa. Los datos de salud y los de menores tienen protección reforzada y se autorizan en un consentimiento con ítems separados. No vendemos datos ni mostramos publicidad.</p>
 </div>
 
 <div class="toc">
   <div class="toc-title">Contenido</div>
-  <a href="#s1">1. Responsable del tratamiento de datos</a>
-  <a href="#s2">2. Qué datos recopilamos</a>
-  <a href="#s3">3. Para qué usamos los datos</a>
-  <a href="#s4">4. Protección especial de datos de menores</a>
-  <a href="#s5">5. Con quién compartimos los datos</a>
-  <a href="#s6">6. Por cuánto tiempo conservamos los datos</a>
-  <a href="#s7">7. Tus derechos</a>
-  <a href="#s8">8. Seguridad de los datos</a>
-  <a href="#s9">9. Notificaciones push</a>
-  <a href="#s10">10. Cambios a esta política</a>
-  <a href="#s11">11. Contacto</a>
+  <a href="#s1">1. Quiénes somos y qué rol tiene cada uno</a>
+  <a href="#s2">2. Qué datos tratamos</a>
+  <a href="#s3">3. Para qué usamos los datos y con qué base</a>
+  <a href="#s4">4. Menores de edad y adulto responsable</a>
+  <a href="#s5">5. Datos de salud y consentimiento separado</a>
+  <a href="#s6">6. Con quién compartimos los datos: subencargados</a>
+  <a href="#s7">7. Transferencias internacionales</a>
+  <a href="#s8">8. Inteligencia artificial</a>
+  <a href="#s9">9. Por cuánto tiempo conservamos los datos</a>
+  <a href="#eliminacion">10. Eliminación de cuenta y de datos</a>
+  <a href="#s11">11. Seguridad e incidentes</a>
+  <a href="#s12">12. Tus derechos</a>
+  <a href="#s13">13. Notificaciones, ubicación, cookies y analytics</a>
+  <a href="#s14">14. Registro Nacional de Bases de Datos</a>
+  <a href="#s15">15. Cambios y adecuación a la normativa</a>
+  <a href="#s16">16. Contacto</a>
+  <a href="#s17">17. Versión y cambios</a>
 </div>
 
 <!-- 1 -->
-<h2 id="s1"><span class="section-num">1</span> Responsable del tratamiento de datos</h2>
+<h2 id="s1"><span class="section-num">1</span> Quiénes somos y qué rol tiene cada uno</h2>
 
-<p>El responsable del tratamiento de los datos personales recopilados a través de esta aplicación es el <strong>desarrollador de la app</strong>, quien la publica y distribuye a través de App Store (Apple) y Google Play (Google). El desarrollador determina los fines y medios del tratamiento de datos en la plataforma y es el interlocutor ante las tiendas de aplicaciones y ante los usuarios en materia de privacidad.</p>
+<p>RTMS (Rugby Team Manager System) es prestado por Leonardo Ezequiel Deambrosi, CUIT 23-28324842-9, con domicilio en Vuelta de Obligado 3841, piso 2, departamento B, Ciudad Autónoma de Buenos Aires, Argentina (en adelante, "RTMS"). Contacto: <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a>.</p>
 
-<p>Los clubes deportivos que utilizan la plataforma actúan como <strong>operadores de datos</strong>. Son responsables de:</p>
-<ul>
-  <li>Obtener el consentimiento de sus jugadores, padres y staff antes de cargar sus datos.</li>
-  <li>Garantizar que los datos cargados sean exactos y estén actualizados.</li>
-  <li>Informar a sus usuarios sobre el uso de esta plataforma y esta política de privacidad.</li>
-  <li>Cumplir con la Ley N.° 25.326 de Protección de Datos Personales de la República Argentina en el marco de su operación como club.</li>
-</ul>
+<p>La ley argentina (Ley 25.326 de Protección de Datos Personales y su Decreto reglamentario 1558/2001) distingue entre quien decide para qué se usan los datos (el <strong>responsable</strong>) y quien los trata por cuenta de otro, siguiendo sus instrucciones (el <strong>encargado</strong>). En RTMS esos roles son los siguientes:</p>
+
+<div class="table-wrap">
+<table class="data-table">
+  <tr><th>Datos</th><th>Responsable</th><th>Encargado</th><th>Quién atiende tus derechos</th></tr>
+  <tr><td>Datos de jugadores, adultos responsables y staff que el club carga en la plataforma (fichas, asistencia, estadísticas, datos de salud, cuotas, comunicaciones, registros de consentimiento)</td><td>El club</td><td>RTMS</td><td>El club. RTMS lo asiste.</td></tr>
+  <tr><td>Datos de tu cuenta de acceso (email, credenciales, identificadores de sesión), registros de aceptación de los Términos y registros de seguridad</td><td>RTMS</td><td>—</td><td>RTMS</td></tr>
+  <tr><td>Datos de contacto y facturación del club</td><td>RTMS</td><td>—</td><td>RTMS</td></tr>
+  <tr><td>Reportes y denuncias de uso indebido de la plataforma</td><td>RTMS <span class="todo">[A COMPLETAR: confirmar con el abogado quién es responsable de estos datos cuando involucran a la comunidad de un club]</span></td><td>—</td><td>RTMS, coordinando con el club</td></tr>
+</table>
+</div>
+
+<p>El club es quien decide qué datos de su comunidad se cargan y para qué, quien debe obtener los consentimientos necesarios, quien responde ante los titulares por la legitimidad de la recolección y quien administra los permisos de sus usuarios. RTMS aporta las herramientas para que el club pueda hacerlo (por ejemplo, registrar consentimientos), pero no decide las finalidades de los datos del club. La relación entre el club y RTMS está regulada por un contrato de suscripción con un anexo de encargo de tratamiento de datos personales.</p>
 
 <div class="highlight-box">
-  <p>Para cualquier consulta sobre privacidad, el punto de contacto es el desarrollador de la app, mediante el email indicado en la sección 11. El desarrollador coordinará con el club correspondiente para resolver tu solicitud.</p>
+  <p>Si tenés una consulta sobre tus datos, podés escribirnos a <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a>. Si el dato lo gestiona un club, derivamos tu solicitud al club y lo asistimos para que te responda dentro de los plazos legales (sección 12).</p>
 </div>
 
 <!-- 2 -->
-<h2 id="s2"><span class="section-num">2</span> Qué datos recopilamos</h2>
+<h2 id="s2"><span class="section-num">2</span> Qué datos tratamos</h2>
+
+<p>Los datos marcados como <strong>sensibles</strong> reciben una protección especial (sección 5).</p>
 
 <h3>2.1 Datos de jugadores</h3>
+<div class="table-wrap">
 <table class="data-table">
-  <tr><th>Dato</th><th>Propósito</th><th>Obligatorio</th></tr>
-  <tr><td>Nombre y apellido</td><td>Identificación en el sistema</td><td>Sí</td></tr>
-  <tr><td>Fecha de nacimiento</td><td>Determinar la categoría deportiva</td><td>Sí</td></tr>
-  <tr><td>DNI / documento de identidad</td><td>Evitar duplicados y gestionar traspasos</td><td>Sí</td></tr>
-  <tr><td>Foto del jugador</td><td>Identificación en lineups y convocatorias</td><td>No</td></tr>
-  <tr><td>Altura y peso (historial)</td><td>Seguimiento del desarrollo físico</td><td>No</td></tr>
-  <tr><td>Grupo sanguíneo y obra social</td><td>Información de salud para emergencias</td><td>No</td></tr>
-  <tr><td>Estado de lesión</td><td>Gestión de convocatorias y disponibilidad</td><td>No</td></tr>
-  <tr><td>Contacto de emergencia</td><td>Seguridad durante actividades deportivas</td><td>No</td></tr>
-  <tr><td>Número de inscripción UAR</td><td>Acreditación federativa</td><td>No</td></tr>
+  <tr><th>Dato</th><th>Propósito</th><th>Obligatorio</th><th>Sensible</th></tr>
+  <tr><td>Nombre y apellido</td><td>Identificación en el sistema</td><td>Sí</td><td>No</td></tr>
+  <tr><td>Fecha de nacimiento</td><td>Determinar la categoría deportiva</td><td>Sí</td><td>No</td></tr>
+  <tr><td>DNI / documento de identidad</td><td>Evitar duplicados y gestionar traspasos</td><td>Sí</td><td>No</td></tr>
+  <tr><td>Foto del jugador</td><td>Identificación en formaciones y convocatorias</td><td>No</td><td>No</td></tr>
+  <tr><td>Datos deportivos: división, posición, asistencia, estadísticas, número de registro UAR</td><td>Gestión deportiva y acreditación federativa</td><td>No (el número UAR, según lo exija el club)</td><td>No</td></tr>
+  <tr><td>Altura y peso (historial)</td><td>Seguimiento del desarrollo físico</td><td>No</td><td>Sí (salud)</td></tr>
+  <tr><td>Grupo sanguíneo y obra social</td><td>Información de salud para emergencias</td><td>No</td><td>Sí (salud)</td></tr>
+  <tr><td>Condición de lesionado (en categorías juveniles, con descripción)</td><td>Gestión de convocatorias y disponibilidad</td><td>No</td><td>Sí (salud)</td></tr>
+  <tr><td>Apto médico (sí/no)</td><td>Disponibilidad para jugar</td><td>No</td><td>Sí (salud)</td></tr>
+  <tr><td>Registros del protocolo de conmoción cerebral</td><td>Seguridad del jugador</td><td>No</td><td>Sí (salud)</td></tr>
+  <tr><td>Contacto de emergencia</td><td>Seguridad durante las actividades</td><td>No</td><td>No</td></tr>
+  <tr><td>Cuenta corriente, cuotas y comprobantes de pago</td><td>Gestión administrativa del club</td><td>Según lo exija el club</td><td>No</td></tr>
 </table>
+</div>
 
-<h3>2.2 Datos de padres y tutores</h3>
+<h3>2.2 Datos de adultos responsables</h3>
+<div class="table-wrap">
 <table class="data-table">
   <tr><th>Dato</th><th>Propósito</th></tr>
-  <tr><td>Nombre y apellido</td><td>Identificación en el sistema</td></tr>
+  <tr><td>Nombre y apellido, vínculo con el jugador</td><td>Identificación y representación del menor</td></tr>
   <tr><td>Email y/o teléfono</td><td>Acceso a la cuenta y recepción de notificaciones</td></tr>
-  <tr><td>Registros de consentimiento otorgado</td><td>Evidencia legal de autorización sobre datos del menor</td></tr>
+  <tr><td>Registros de las autorizaciones otorgadas (fecha, hora, versión del texto, IP y dispositivo)</td><td>Evidencia de la autorización sobre los datos del menor</td></tr>
 </table>
+</div>
 
-<h3>2.3 Datos de staff del club</h3>
+<h3>2.3 Datos de staff y comisión directiva</h3>
+<div class="table-wrap">
 <table class="data-table">
   <tr><th>Dato</th><th>Propósito</th></tr>
   <tr><td>Nombre, email y teléfono</td><td>Acceso a la cuenta y comunicaciones internas</td></tr>
   <tr><td>Rol dentro del club</td><td>Control de acceso y permisos según responsabilidad</td></tr>
 </table>
+</div>
 
-<h3>2.4 Datos técnicos</h3>
+<h3>2.4 Contenido y comunicaciones</h3>
 <ul>
-  <li>Dirección IP y datos del dispositivo al momento de otorgar consentimientos, a efectos de auditoría legal.</li>
-  <li>Registros de acceso para detección de usos no autorizados.</li>
-  <li>Datos de uso anonimizados para mejorar el rendimiento de la aplicación (sin identificación personal).</li>
+  <li>Avisos, convocatorias, pedidos de reunión y comentarios que se envían dentro de la plataforma, y los reportes de uso indebido que nos envíes. La app no tiene chat ni mensajes privados entre usuarios.</li>
+  <li>Archivos y fotos que subís (por ejemplo, comprobantes).</li>
 </ul>
 
-<h3>2.5 Datos que NO recopilamos</h3>
+<h3>2.5 Datos técnicos</h3>
 <ul>
-  <li>No recopilamos datos de localización (GPS).</li>
-  <li>No accedemos a la lista de contactos del dispositivo.</li>
-  <li>No recopilamos datos de navegación fuera de la app.</li>
-  <li>No utilizamos cookies de seguimiento publicitario.</li>
+  <li>Dirección IP y datos del dispositivo al aceptar los Términos o al otorgar autorizaciones, a efectos de auditoría.</li>
+  <li>Registros de errores del servidor, para corregir fallas. El servicio de monitoreo está configurado para no recibir datos personales.</li>
+  <li>Token de notificaciones push de tu dispositivo, si activaste las notificaciones.</li>
+  <li>No usamos herramientas de analítica de uso en la app.</li>
+</ul>
+
+<h3>2.6 Ubicación y clima</h3>
+<ul>
+  <li><strong>Pronóstico del clima del evento:</strong> se consulta usando la ubicación del lugar del evento cargada por el club, no tu ubicación personal.</li>
+  <li><strong>Ubicación de tu dispositivo:</strong> la app no la pide ni la usa, tampoco en el carpool.</li>
+</ul>
+
+<h3>2.7 Datos que no tratamos</h3>
+<ul>
+  <li>No hacemos seguimiento continuo de tu ubicación (GPS).</li>
+  <li>No accedemos a la lista de contactos de tu dispositivo.</li>
+  <li>No recopilamos datos de tu navegación fuera de RTMS.</li>
+  <li>No usamos cookies ni identificadores de seguimiento publicitario.</li>
   <li>No vendemos ni cedemos datos a terceros con fines comerciales.</li>
 </ul>
 
 <!-- 3 -->
-<h2 id="s3"><span class="section-num">3</span> Para qué usamos los datos</h2>
+<h2 id="s3"><span class="section-num">3</span> Para qué usamos los datos y con qué base</h2>
 
-<p>Los datos recopilados se utilizan exclusivamente para los siguientes fines:</p>
+<h3>3.1 Finalidades</h3>
 <ul>
-  <li><strong>Gestión deportiva:</strong> convocatorias, lineups, presencias y estadísticas de partidos y entrenamientos.</li>
-  <li><strong>Gestión administrativa:</strong> tercer tiempo, pagos, logística y cuenta corriente por jugador.</li>
+  <li><strong>Gestión deportiva:</strong> convocatorias, formaciones, asistencia, estadísticas de partidos y entrenamientos, planificación de entrenamientos.</li>
+  <li><strong>Gestión administrativa:</strong> tercer tiempo, cuotas y pagos, comprobantes y cuenta corriente por jugador.</li>
   <li><strong>Comunicación interna del club:</strong> notificaciones sobre eventos, convocatorias y avisos del staff.</li>
-  <li><strong>Seguridad del jugador:</strong> disponibilidad de información de emergencia para el staff durante actividades.</li>
+  <li><strong>Seguridad del jugador:</strong> información de emergencia y protocolo de conmoción disponibles para el staff autorizado.</li>
   <li><strong>Cumplimiento federativo:</strong> gestión de inscripciones UAR y traspasos entre clubes.</li>
-  <li><strong>Planificación:</strong> seguimiento del desarrollo físico y planificación de entrenamientos.</li>
+  <li><strong>Seguridad de la plataforma y protección de menores:</strong> atención de reportes y moderación.</li>
+  <li><strong>Funcionamiento de tu cuenta y facturación al club.</strong></li>
 </ul>
 
 <div class="warning-box">
-  <p><strong>No utilizamos los datos para:</strong> publicidad, análisis comercial, cesión a terceros, elaboración de perfiles fuera del contexto deportivo ni ningún otro fin distinto a los indicados.</p>
+  <p><strong>No usamos los datos para:</strong> publicidad, cesión a terceros con fines comerciales, elaboración de perfiles fuera del contexto deportivo, entrenamiento de modelos de inteligencia artificial con datos identificables de menores, ni ningún fin distinto a los indicados.</p>
 </div>
+
+<h3>3.2 Base para el tratamiento</h3>
+<p>La Ley 25.326 se basa en el consentimiento libre, expreso e informado del titular (art. 5). En RTMS:</p>
+<ul>
+  <li>Para los datos de las fichas, el club, como responsable, obtiene el consentimiento del titular o, si es menor, del adulto responsable. RTMS provee las herramientas para pedirlo y registrarlo.</li>
+  <li>Los datos de salud y la imagen de menores se autorizan en ítems propios del consentimiento que firma el adulto responsable (secciones 4 y 5).</li>
+  <li>Para los datos de tu cuenta de acceso y los de contacto y facturación del club, el tratamiento surge de la relación contractual que mantenés con RTMS o con el club.</li>
+</ul>
+
+<h3>3.3 Información que te damos al pedirte datos</h3>
+<p>Al pedirte datos te informamos la finalidad, quiénes los reciben, quién es el responsable de la base, si dar el dato es obligatorio o facultativo, qué consecuencias tiene negarte y cuáles son tus derechos. En general:</p>
+<ul>
+  <li>Son <strong>obligatorios</strong> el nombre, la fecha de nacimiento y el DNI del jugador, y los datos de acceso de cada cuenta: sin ellos no podemos identificar al jugador ni habilitar la cuenta.</li>
+  <li>Son <strong>facultativos</strong> la foto, los datos de salud, la altura y el peso, y el contacto de emergencia. Si no los das, el jugador puede participar igual; solo no estarán disponibles las funciones que los usan. Es posible que el club tenga reglas propias (por ejemplo, una ficha médica para ciertas actividades) que debés consultar con él.</li>
+</ul>
 
 <!-- 4 -->
-<h2 id="s4"><span class="section-num">4</span> Protección especial de datos de menores</h2>
+<h2 id="s4"><span class="section-num">4</span> Menores de edad y adulto responsable</h2>
 
 <div class="highlight-box">
-  <p>Esta sección es especialmente importante. La app gestiona jugadores de todas las edades, incluyendo menores de edad. Aplicamos medidas específicas y más estrictas para la protección de sus datos, en cumplimiento de la Ley 25.326 y las políticas de Apple App Store y Google Play.</p>
+  <p>La plataforma gestiona jugadores de todas las edades, incluidos niños, niñas y adolescentes. Aplicamos medidas más estrictas para proteger sus datos. Las edades y reglas de esta sección son un criterio propio de RTMS, no un mandato de ninguna autoridad de aplicación.</p>
 </div>
 
-<h3>4.1 Consentimiento parental obligatorio</h3>
-<p>Los jugadores menores de 13 años no pueden tener cuenta propia en la app. Su ficha es administrada por el padre, madre o tutor/a legal registrado/a (en adelante, "el tutor").</p>
-
-<p>Para todos los jugadores de 12 años o menos, el tutor debe otorgar consentimiento explícito antes de que cualquier dato personal del menor sea almacenado en la plataforma. Este consentimiento:</p>
+<h3>4.1 Quién tiene cuenta</h3>
 <ul>
-  <li>Se solicita mediante un checklist de ítems individuales que deben marcarse uno por uno — no alcanza con un único "acepto todo".</li>
-  <li>Cubre el tratamiento de datos personales básicos, datos de salud (altura, peso, grupo sanguíneo, estado de lesión) y foto del jugador.</li>
-  <li>Queda registrado con fecha, hora, dirección IP y datos del dispositivo como evidencia auditable.</li>
-  <li>Debe renovarse cada vez que se actualicen datos sensibles del menor (foto o mediciones físicas).</li>
+  <li><strong>Hasta la categoría M12:</strong> el jugador no tiene cuenta propia. Su ficha la administra el adulto responsable registrado.</li>
+  <li><strong>Desde la categoría M13 y hasta los 17 años:</strong> el jugador puede tener cuenta propia, que crean el adulto responsable o un manager del club con el email y el teléfono del jugador. El adulto responsable sigue como contacto y recibe los avisos del club. Los datos de salud y las demás autorizaciones sensibles requieren la autorización del adulto responsable.</li>
 </ul>
 
-<h3>4.2 Aprobación de datos cargados</h3>
-<p>Para jugadores de 12 años o menos, cualquier dato cargado por el manager queda en estado pendiente hasta que el tutor lo aprueba desde su cuenta. De la misma manera, los datos cargados por el tutor requieren confirmación del manager del club. Hasta que ambas partes aprueban, el jugador no puede ser convocado.</p>
+<h3>4.2 Autorizaciones por separado</h3>
+<p>Para que un jugador menor pueda ser convocado, el adulto responsable firma en la app un consentimiento con ítems que se marcan uno por uno (no existe un único "acepto todo"): atención médica de urgencia, tratamiento de datos personales y de salud, y términos de uso y código de conducta, que son obligatorios; y uso de imagen, traslados y comunicaciones del club, que son opcionales. Cada ítem puede leerse completo antes de marcarlo. La firma queda registrada con fecha, hora, versión del texto, dirección IP y dispositivo, y se vuelve a pedir cuando se actualizan datos sensibles del jugador.</p>
 
-<h3>4.3 Minimización de datos en menores</h3>
-<p>Para categorías infantiles aplicamos el principio de minimización:</p>
+<h3>4.3 Aprobación de datos cargados</h3>
+<p>Para jugadores menores de 13 años, los datos que carga el manager quedan pendientes hasta que el adulto responsable los aprueba, y los que carga el adulto responsable requieren la confirmación del manager del club. Hasta que ambos aprueban, el jugador no puede ser convocado.</p>
+
+<h3>4.4 Minimización</h3>
 <ul>
-  <li>Las lesiones se registran únicamente como indicador de estado (lesionado / no lesionado), sin descripción médica ni historial clínico.</li>
-  <li>El apto médico se gestiona como indicador informativo sin almacenamiento de imágenes ni documentos.</li>
-  <li>No se registran conversaciones directas entre el staff y los tutores fuera de canales estructurados y auditados.</li>
+  <li>En categorías infantiles, la lesión se registra solo como indicador (lesionado / no lesionado), sin descripción médica.</li>
+  <li>El apto médico se registra como indicador, sin almacenar imágenes ni documentos.</li>
+  <li>Las comunicaciones con menores siguen las reglas de protección de los Términos y Condiciones (sección 7). La app no tiene chat ni mensajes privados entre usuarios: el club se comunica con avisos para grupos y con convocatorias.</li>
+  <li>Los rankings y estadísticas del plantel los ve el staff del club. Los jugadores los ven solo si el club lo habilita, y no se muestran a otras familias ni fuera del club.</li>
 </ul>
 
-<h3>4.4 Acceso restringido a datos de menores</h3>
-<p>Los datos de un jugador menor son accesibles únicamente por:</p>
+<h3>4.5 Quién accede a los datos de un menor</h3>
 <ul>
-  <li>El staff de la división a la que pertenece (entrenadores y manager de división).</li>
-  <li>El manager general del club.</li>
-  <li>El jugador, si tiene cuenta activa (desde los 13 años).</li>
-  <li>El padre, madre o tutor/a registrado/a en la cuenta.</li>
+  <li>El staff de la división a la que pertenece. El DNI, el grupo sanguíneo, la obra social y el contacto de emergencia los ven solo los entrenadores y los managers de esa división.</li>
+  <li>Los managers de área y la comisión directiva del club que corresponda.</li>
+  <li>El jugador, si tiene cuenta activa.</li>
+  <li>El adulto responsable registrado.</li>
+  <li>Personal autorizado de RTMS, solo para dar soporte técnico al club.</li>
 </ul>
-<p>Ningún otro usuario, club externo ni tercero tiene acceso a esta información. Esta restricción se aplica tanto en la lógica de la aplicación como a nivel de base de datos.</p>
+<p>Ningún otro usuario, club externo ni tercero accede a esta información. Esta restricción se aplica en el servidor de RTMS: la app no accede directamente a la base de datos.</p>
+
+<h3>4.6 Cuando el jugador cumple 18 años</h3>
+<p>A los 18 años el jugador pasa a ser el único titular de sus datos. Las autorizaciones que firmó el adulto responsable siguen vigentes y la cuenta funciona igual. Si el jugador no está de acuerdo con ellas, puede pedir la baja de su cuenta (sección 10).</p>
 
 <!-- 5 -->
-<h2 id="s5"><span class="section-num">5</span> Con quién compartimos los datos</h2>
+<h2 id="s5"><span class="section-num">5</span> Datos de salud y consentimiento separado</h2>
 
-<h3>5.1 Dentro del club</h3>
-<p>Los datos se comparten únicamente con los miembros del staff del club que tienen los permisos correspondientes, según se describe en la sección 4.4.</p>
-
-<h3>5.2 Proveedores de infraestructura tecnológica</h3>
-<p>Para el funcionamiento de la plataforma se utilizan los siguientes proveedores de servicios tecnológicos, que actúan como subencargados de tratamiento y están contractualmente obligados a no utilizar los datos para ningún fin propio:</p>
-<table class="data-table">
-  <tr><th>Proveedor</th><th>Servicio</th><th>Política de privacidad</th></tr>
-  <tr><td>Supabase</td><td>Base de datos, autenticación, almacenamiento de archivos (fotos, comprobantes)</td><td>supabase.com/privacy</td></tr>
-  <tr><td>Fly.io</td><td>Alojamiento del servidor de la API (backend)</td><td>fly.io/legal/privacy-policy</td></tr>
-  <tr><td>Expo / EAS</td><td>Distribución mobile y entrega de notificaciones push</td><td>expo.dev/privacy</td></tr>
-  <tr><td>Apple App Store / Google Play</td><td>Distribución de la aplicación a dispositivos</td><td>apple.com/legal/privacy &nbsp;·&nbsp; policies.google.com/privacy</td></tr>
-</table>
-
-<h3>5.3 Lo que nunca hacemos</h3>
+<p>Los datos de salud (altura y peso, grupo sanguíneo, obra social, condición de lesionado, apto médico y registros del protocolo de conmoción) son datos sensibles según la Ley 25.326. Por eso:</p>
 <ul>
-  <li>No vendemos datos personales a terceros.</li>
-  <li>No cedemos datos a anunciantes ni plataformas publicitarias.</li>
-  <li>No compartimos datos con otras federaciones, clubes ni terceros sin consentimiento explícito.</li>
-  <li>No transferimos datos fuera del contexto de los servicios descriptos en esta política.</li>
+  <li><strong>Nadie está obligado a darlos.</strong> Son siempre facultativos (art. 7).</li>
+  <li><strong>Se autorizan expresamente</strong> en el ítem de tratamiento de datos del consentimiento, que menciona los datos de salud por separado. Para menores, lo firma el adulto responsable.</li>
+  <li><strong>Se limitan a lo indispensable</strong> para la seguridad del jugador y la gestión de su disponibilidad.</li>
+  <li><strong>Solo acceden</strong> las personas indicadas en la sección 4.5.</li>
+  <li>Se pueden retirar las autorizaciones en cualquier momento (sección 12).</li>
 </ul>
-
-<!-- 6 -->
-<h2 id="s6"><span class="section-num">6</span> Por cuánto tiempo conservamos los datos</h2>
-
-<table class="data-table">
-  <tr><th>Tipo de dato</th><th>Plazo</th><th>Motivo</th></tr>
-  <tr><td>Datos personales del jugador activo</td><td>Mientras el jugador esté activo en el club</td><td>Necesidad operativa</td></tr>
-  <tr><td>Datos personales del jugador dado de baja</td><td>30 días, luego enmascarados</td><td>Derecho de supresión — Art. 6, Ley 25.326</td></tr>
-  <tr><td>Historial deportivo anonimizado</td><td>Indefinido</td><td>Estadísticas sin identificación personal</td></tr>
-  <tr><td>Comprobantes de pago</td><td>5 años</td><td>Obligación fiscal — Ley 11.683</td></tr>
-  <tr><td>Registros de consentimiento</td><td>5 años desde el último consentimiento</td><td>Evidencia legal ante autoridad de contralor</td></tr>
-  <tr><td>Registros de acceso y auditoría</td><td>12 meses</td><td>Seguridad y resolución de incidentes</td></tr>
-</table>
-
-<div class="highlight-box">
-  <p><strong>Baja lógica:</strong> cuando un jugador es dado de baja, su acceso queda revocado inmediatamente. A los 30 días, sus datos personales identificables (nombre, DNI, foto, mediciones, contacto de emergencia) son enmascarados automáticamente. El historial deportivo puede conservarse de forma anonimizada.</p>
-</div>
-
-<!-- 7 -->
-<h2 id="s7"><span class="section-num">7</span> Tus derechos</h2>
-
-<p>De acuerdo con la Ley N.° 25.326 de Protección de Datos Personales de la República Argentina, tenés los siguientes derechos sobre tus datos personales:</p>
-
-<h3>Derecho de acceso</h3>
-<p>Podés solicitar en cualquier momento saber qué datos personales tuyos o de tu hijo/a menor están almacenados en la plataforma.</p>
-
-<h3>Derecho de rectificación y actualización</h3>
-<p>Podés solicitar la corrección de datos inexactos, incompletos o desactualizados.</p>
-
-<h3>Derecho de supresión</h3>
-<p>Podés solicitar la eliminación de tus datos. Para jugadores activos, esto implica la baja del sistema con el proceso descripto en la sección 6. Los comprobantes de pago se conservan por obligación fiscal.</p>
-
-<h3>Derecho de confidencialidad</h3>
-<p>Podés solicitar que tus datos no sean cedidos a terceros fuera de los casos descriptos en esta política.</p>
-
-<h3>Cómo ejercer tus derechos</h3>
-<p>Para ejercer cualquiera de estos derechos, contactá al desarrollador de la app mediante el email indicado en la sección 11. El desarrollador coordinará con el club correspondiente para dar respuesta a tu solicitud dentro de los 5 días hábiles, conforme al Art. 14 de la Ley 25.326.</p>
 
 <div class="warning-box">
-  <p><strong>Para padres y tutores:</strong> podés ejercer estos derechos en nombre de tu hijo/a menor. La solicitud debe realizarla quien figura como tutor registrado en la cuenta.</p>
+  <p><strong>RTMS no es un servicio de salud.</strong> No diagnostica, no da altas médicas y no reemplaza el apto médico ni el criterio de un profesional. Los registros son los que cargan el staff o los profesionales. Los detalles están en los Términos y Condiciones (sección 10).</p>
 </div>
 
-<p>Si considerás que tus derechos no han sido atendidos adecuadamente, podés presentar una denuncia ante la <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, autoridad de aplicación de la Ley 25.326 en Argentina: <a href="https://www.argentina.gob.ar/aaip/datospersonales" target="_blank">www.argentina.gob.ar/aaip/datospersonales</a>.</p>
+<!-- 6 -->
+<h2 id="s6"><span class="section-num">6</span> Con quién compartimos los datos: subencargados</h2>
+
+<h3>6.1 Dentro del club</h3>
+<p>Los datos se comparten únicamente con los integrantes del club que tienen permiso según su rol (sección 4.5).</p>
+
+<h3>6.2 Proveedores que nos ayudan a prestar el servicio</h3>
+<p>RTMS usa los siguientes proveedores, que tratan datos por cuenta nuestra y del club (subencargados). Con ellos tenemos acuerdos que los obligan a no usar los datos para fines propios. Los proveedores que alojan o procesan datos fuera de la Argentina se detallan con su país en la sección 7.</p>
+
+<div class="table-wrap">
+<table class="data-table">
+  <tr><th>Proveedor</th><th>Servicio</th><th>País / región de los datos</th></tr>
+  <tr><td>Supabase</td><td>Base de datos, autenticación y almacenamiento de archivos (fotos, comprobantes)</td><td>Brasil (São Paulo)</td></tr>
+  <tr><td>Resend</td><td>Envío de los correos de acceso e invitación</td><td>Estados Unidos</td></tr>
+  <tr><td>GitHub</td><td>Guarda las copias de respaldo de la base, cifradas</td><td>Estados Unidos</td></tr>
+  <tr><td>Fly.io</td><td>Alojamiento del servidor de la API</td><td>Brasil (São Paulo)</td></tr>
+  <tr><td>Vercel</td><td>Alojamiento del panel web</td><td>Estados Unidos</td></tr>
+  <tr><td>Sentry</td><td>Monitoreo de errores del servidor</td><td>Estados Unidos</td></tr>
+  <tr><td>Google Maps (geocodificación) u OpenStreetMap (Nominatim)</td><td>Convertir la dirección del lugar del evento en coordenadas para el pronóstico del clima. Reciben solo esa dirección, no datos de personas.</td><td>Estados Unidos (Google) / Unión Europea (OpenStreetMap)</td></tr>
+  <tr><td>Expo / EAS</td><td>Distribución de la app móvil y entrega de notificaciones push</td><td>Estados Unidos</td></tr>
+  <tr><td>Mercado Pago</td><td>Procesamiento de pagos (la suscripción del club y, cuando el club lo use, el cobro de cuotas)</td><td>Argentina</td></tr>
+</table>
+</div>
+
+<p>Además:</p>
+<ul>
+  <li><strong>Open-Meteo</strong> provee los datos meteorológicos. Recibe solo las coordenadas del lugar del evento a través de nuestro servidor, no datos de las personas.</li>
+  <li><strong>Apple App Store y Google Play</strong> distribuyen la aplicación, y tratan los datos de las cuentas de tienda con sus propias políticas.</li>
+</ul>
+
+<p>El listado vigente se mantiene actualizado en esta sección. Antes de incorporar o reemplazar un proveedor que trate datos de los clubes, avisamos al club con anticipación (hoy, 30 días) para que pueda objetar.</p>
+
+<h3>6.3 Autoridades y casos legales</h3>
+<p>Podemos comunicar datos a una autoridad judicial o administrativa cuando una ley o una orden fundada lo exija, o para proteger a una persona ante un riesgo grave, en especial a un menor.</p>
+
+<h3>6.4 Lo que nunca hacemos</h3>
+<ul>
+  <li>No vendemos datos personales.</li>
+  <li>No los cedemos a anunciantes ni a plataformas publicitarias.</li>
+  <li>No los compartimos con otros clubes, federaciones u otros terceros sin la autorización que corresponda.</li>
+</ul>
+
+<!-- 7 -->
+<h2 id="s7"><span class="section-num">7</span> Transferencias internacionales</h2>
+
+<p>Varios de los proveedores de la sección 6 procesan datos en Brasil y en Estados Unidos. Ninguno de los dos figura en la lista de países con nivel adecuado de protección reconocida por la Agencia de Acceso a la Información Pública (AAIP). <span class="todo">[A COMPLETAR: confirmar con el abogado la lista vigente de países adecuados]</span> Por eso, la Ley 25.326 (art. 12) exige un mecanismo adicional. En RTMS:</p>
+<ul>
+  <li>Las transferencias se amparan en <strong>cláusulas contractuales modelo</strong> aprobadas por la AAIP (Resolución AAIP 198/2023), que se incorporan a la relación entre el club, RTMS y los subencargados. <span class="todo">[A COMPLETAR: confirmar el instrumento que efectivamente se firmó o aceptó con cada proveedor]</span></li>
+  <li>Cuando corresponda, además, te informamos y pedimos tu <strong>consentimiento expreso</strong> (el del adulto responsable, si sos menor) en la autorización de datos de la ficha.</li>
+  <li>Nos obligamos a que los proveedores traten los datos solo para prestar el servicio y con medidas de seguridad adecuadas.</li>
+</ul>
+<p>Si la AAIP reconociera nuevos países como adecuados o cambiara el régimen, adaptaremos el mecanismo sin que eso reduzca tu protección, y actualizaremos esta sección.</p>
 
 <!-- 8 -->
-<h2 id="s8"><span class="section-num">8</span> Seguridad de los datos</h2>
+<h2 id="s8"><span class="section-num">8</span> Inteligencia artificial</h2>
 
-<p>Se implementan las siguientes medidas técnicas y organizativas para proteger los datos personales:</p>
 <ul>
-  <li><strong>Cifrado en tránsito:</strong> toda comunicación entre la app y los servidores se realiza mediante HTTPS/TLS.</li>
-  <li><strong>Cifrado en reposo:</strong> los datos almacenados en la base de datos y los archivos (fotos, documentos) están cifrados.</li>
-  <li><strong>Control de acceso por rol y división:</strong> cada usuario solo accede a los datos de su división y según su rol. La restricción opera tanto en la lógica de la app como directamente en la base de datos.</li>
-  <li><strong>Archivos privados:</strong> ningún archivo es de acceso público. Se requiere una URL firmada con expiración para acceder a fotos, comprobantes o documentos.</li>
-  <li><strong>Autenticación segura:</strong> acceso mediante tokens de corta duración. Las invitaciones usan links de un solo uso con expiración de 7 días.</li>
-  <li><strong>Auditoría:</strong> los accesos y modificaciones sobre datos sensibles quedan registrados con usuario, fecha y hora.</li>
+  <li><strong>Hoy RTMS no usa inteligencia artificial.</strong> Los informes y las sugerencias de la app se calculan con reglas propias en nuestros servidores. No se envían datos a ningún proveedor de inteligencia artificial.</li>
+  <li><strong>Decisiones:</strong> el entrenador o el staff decide. RTMS no toma decisiones automáticas de selección, convocatoria ni exclusión de jugadores.</li>
+  <li><strong>Si se incorpora en el futuro:</strong> antes de enviar datos a un proveedor de inteligencia artificial vamos a actualizar esta política (sección 15), informar el proveedor y su país, y pedir el permiso que corresponda. RTMS no usa datos personales identificables de menores para entrenar modelos de inteligencia artificial.</li>
 </ul>
-
-<p>En caso de una brecha de seguridad que pueda afectar derechos de los usuarios, el club será notificado a la brevedad para que pueda cumplir con sus obligaciones de información.</p>
 
 <!-- 9 -->
-<h2 id="s9"><span class="section-num">9</span> Notificaciones push</h2>
+<h2 id="s9"><span class="section-num">9</span> Por cuánto tiempo conservamos los datos</h2>
 
-<p>La app utiliza notificaciones push para comunicar convocatorias, eventos deportivos, recordatorios de pago y avisos del club.</p>
-<ul>
-  <li>Las notificaciones push requieren tu permiso explícito en el dispositivo. Podés desactivarlas en cualquier momento desde la configuración del sistema operativo (iOS: Ajustes → Notificaciones; Android: Configuración → Aplicaciones).</li>
-  <li>Las notificaciones no se utilizan con fines publicitarios.</li>
-  <li>Los datos de dispositivo necesarios para el envío de notificaciones (token push) son gestionados por Expo y no se comparten con terceros.</li>
-</ul>
+<p>Conservamos los datos solo mientras sean necesarios para los fines descriptos o mientras una norma lo exija.</p>
+
+<div class="table-wrap">
+<table class="data-table">
+  <tr><th>Categoría</th><th>Plazo</th><th>Motivo</th></tr>
+  <tr><td>Datos personales del jugador activo (ficha)</td><td>Mientras el jugador esté activo en el club</td><td>Necesidad operativa</td></tr>
+  <tr><td>Datos personales del jugador dado de baja por el club</td><td>Acceso revocado de inmediato; los datos identificables se enmascaran a los 30 días</td><td>Permite corregir bajas por error y cumplir la supresión (art. 4, Ley 25.326)</td></tr>
+  <tr><td>Datos de salud y registros de conmoción</td><td>Mientras el jugador esté activo; luego, se enmascaran junto con la ficha <span class="todo">[A COMPLETAR: confirmar con el abogado si el club debe conservar por más tiempo los registros de lesiones y conmoción]</span></td><td>Seguridad del jugador</td></tr>
+  <tr><td>Historial deportivo anonimizado</td><td>Sin plazo, porque no identifica a nadie</td><td>Estadísticas</td></tr>
+  <tr><td>Cuenta de acceso (email, credenciales)</td><td>Mientras la cuenta esté activa; se elimina al darse de baja (sección 10)</td><td>Funcionamiento de la cuenta</td></tr>
+  <tr><td>Registros de consentimiento y de aceptación de los Términos</td><td>5 años desde el último consentimiento o la última aceptación</td><td>Evidencia legal</td></tr>
+  <tr><td>Comprobantes de pago</td><td>5 años <span class="todo">[A COMPLETAR: confirmar con el contador]</span></td><td>Obligación fiscal (Ley 11.683)</td></tr>
+  <tr><td>Facturación de RTMS al club</td><td><span class="todo">[A COMPLETAR: plazo fiscal confirmado por el contador]</span></td><td>Obligación fiscal</td></tr>
+  <tr><td>Avisos, pedidos de reunión y contenido</td><td>Mientras la cuenta esté activa. Tras la baja, se conservan mientras el club use RTMS, como parte de su historial</td><td>Funcionamiento y protección de menores</td></tr>
+  <tr><td>Reportes de moderación y denuncias</td><td>2 años desde que se cierra el reporte</td><td>Seguridad y protección de menores</td></tr>
+  <tr><td>Registros de errores y monitoreo</td><td>90 días</td><td>Corrección de fallas</td></tr>
+  <tr><td>Token de notificaciones push</td><td>Hasta que desactivás las notificaciones o desinstalás la app</td><td>Envío de avisos</td></tr>
+  <tr><td>Copias de respaldo</td><td>Copias semanales cifradas, que se conservan 90 días</td><td>Recuperación ante fallas</td></tr>
+  <tr><td>Cuando el club termina su contrato</td><td>30 días para que el club exporte sus datos y hasta 30 días más para destruirlos, incluidas las copias de respaldo según su rotación. Certificamos la destrucción si el club lo pide.</td><td>Contrato con el club (art. 25, Ley 25.326)</td></tr>
+</table>
+</div>
+
+<p>Algunos datos pueden conservarse por más tiempo si una norma lo exige o para defender derechos ante un reclamo, en cuyo caso se limitan a lo necesario.</p>
 
 <!-- 10 -->
-<h2 id="s10"><span class="section-num">10</span> Cambios a esta política</h2>
+<h2 id="eliminacion"><span class="section-num">10</span> Eliminación de cuenta y de datos</h2>
 
-<p>Esta política puede actualizarse periódicamente. Cuando se realicen cambios significativos:</p>
+<p>Esta sección es la página pública de eliminación de cuenta de <strong>RTMS — Rugby Team Manager System</strong>.</p>
+
+<h3>10.1 Cómo eliminar tu cuenta</h3>
 <ul>
-  <li>Se actualizará la fecha de "Última actualización" al inicio del documento.</li>
-  <li>Los usuarios activos serán notificados a través de la app.</li>
-  <li>Si los cambios afectan el tratamiento de datos de menores, se solicitará una renovación del consentimiento parental.</li>
+  <li><strong>Desde la app:</strong> Mi cuenta → Eliminar cuenta. A "Mi cuenta" se entra desde la pestaña Más (staff) o desde Inicio (familias y jugadores).</li>
+  <li><strong>Por email:</strong> escribí a <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a> desde el email de la cuenta, con el asunto "Eliminar cuenta RTMS". Si es la cuenta de un menor, la solicita el adulto responsable. Podemos pedirte datos para verificar tu identidad.</li>
 </ul>
-<p>El uso continuado de la app tras la notificación implica la aceptación de la política actualizada.</p>
+
+<h3>10.2 Qué pasa al eliminar</h3>
+<ul>
+  <li>Tu acceso se revoca de inmediato.</li>
+  <li>Tus datos identificables se suprimen o enmascaran dentro de los 5 días hábiles del pedido (art. 16, Ley 25.326), salvo lo que debamos conservar.</li>
+  <li>La ficha deportiva de un jugador es un registro del club. Si el club da de baja al jugador, sus datos identificables se enmascaran a los 30 días (sección 9).</li>
+  <li>Pedimos a nuestros proveedores que eliminen los datos que tratan por nuestra cuenta, y las copias de respaldo se eliminan según su ciclo de rotación.</li>
+</ul>
+
+<h3>10.3 Qué conservamos</h3>
+<ul>
+  <li>Comprobantes de pago y datos de facturación, por obligación fiscal.</li>
+  <li>Registros de consentimiento y de aceptación de los Términos, como evidencia.</li>
+  <li>Registros de seguridad y reportes de uso indebido, mientras sea necesario para proteger a otras personas o para defender derechos.</li>
+  <li>Datos anonimizados o agregados que no te identifican.</li>
+</ul>
+<p>No se puede suprimir un dato si eso perjudicara derechos de terceros o existe una obligación legal de conservarlo (art. 16, Ley 25.326). Si tenés una suscripción pendiente, cancelala antes de eliminar la cuenta.</p>
 
 <!-- 11 -->
-<h2 id="s11"><span class="section-num">11</span> Contacto</h2>
+<h2 id="s11"><span class="section-num">11</span> Seguridad e incidentes</h2>
 
-<p>El responsable del tratamiento de datos es el desarrollador de la app. Para consultas, solicitudes de ejercicio de derechos o reportes de incidentes de privacidad:</p>
+<h3>11.1 Medidas de seguridad</h3>
+<p>Adoptamos medidas técnicas y organizativas para proteger los datos, tomando como referencia las medidas recomendadas por la AAIP (Resolución 47/2018):</p>
 <ul>
-  <li><strong>Desde la app:</strong> menú de configuración → "Ayuda y privacidad".</li>
-  <li><strong>Email:</strong> <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a></li>
-  <li><strong>Tiempo de respuesta:</strong> hasta 5 días hábiles (Art. 14, Ley 25.326).</li>
+  <li><strong>Cifrado en tránsito:</strong> toda comunicación entre la app y los servidores usa HTTPS/TLS.</li>
+  <li><strong>Cifrado en reposo</strong> de los datos y los archivos almacenados.</li>
+  <li><strong>Control de acceso por rol y división</strong> en el servidor. La app no accede directamente a la base de datos.</li>
+  <li><strong>Archivos privados:</strong> las fotos, los comprobantes y los documentos se guardan en almacenamiento privado y se acceden con URL firmadas que vencen a la hora. Solo los logos y fondos del club son públicos.</li>
+  <li><strong>Autenticación segura:</strong> tokens de corta duración e invitaciones con enlaces de un solo uso que vencen.</li>
+  <li><strong>Copias de respaldo</strong> semanales y cifradas, y revisión periódica de vulnerabilidades y dependencias.</li>
+  <li>Ningún sistema es inviolable: nuestra obligación es adoptar y mantener medidas razonables de prevención, detección y respuesta.</li>
 </ul>
-<p>Las solicitudes relativas a datos gestionados por un club específico serán coordinadas por el desarrollador con el club correspondiente para garantizar una respuesta completa.</p>
+
+<h3>11.2 Incidentes de seguridad</h3>
+<div class="highlight-box">
+  <p>Ante un incidente de seguridad que afecte datos de un club, RTMS se compromete a avisar al club <strong>sin demora indebida y, como objetivo, dentro de las 72 horas</strong> de tomar conocimiento, con la información disponible (naturaleza del incidente, datos y personas afectadas, medidas adoptadas). Es un compromiso contractual de RTMS con el club.</p>
+</div>
+<p>Este plazo corre desde que RTMS toma conocimiento; los proveedores de infraestructura nos informan según sus propios contratos. Cuando el incidente afecte datos de tu cuenta de los que RTMS es responsable, te lo informaremos sin demora indebida. El club decide, como responsable, qué comunicaciones hace a los titulares y a las autoridades, y RTMS lo asiste.</p>
+
+<!-- 12 -->
+<h2 id="s12"><span class="section-num">12</span> Tus derechos</h2>
+
+<p>De acuerdo con la Ley 25.326, tenés derecho a:</p>
+<ul>
+  <li><strong>Acceso:</strong> saber qué datos tuyos (o de tu hijo/a) se tratan, de dónde provienen, para qué y a quién se comunicaron.</li>
+  <li><strong>Rectificación y actualización:</strong> corregir datos inexactos o desactualizados.</li>
+  <li><strong>Supresión:</strong> pedir que se eliminen tus datos. No procede si perjudica derechos de terceros o existe una obligación legal de conservarlos.</li>
+  <li><strong>Confidencialidad:</strong> pedir que tus datos no se cedan fuera de los casos informados.</li>
+  <li><strong>Retirar tus autorizaciones</strong> (por ejemplo, la de imagen o la de comunicaciones) cuando quieras, pidiéndoselo al club o escribiendo a <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a>. El retiro no afecta lo hecho antes de retirarlas. Si se retira la autorización de datos de salud, el club no puede convocar al jugador.</li>
+</ul>
+
+<h3>Plazos</h3>
+<div class="table-wrap">
+<table class="data-table">
+  <tr><th>Derecho</th><th>Plazo legal de respuesta</th></tr>
+  <tr><td>Acceso</td><td>10 días corridos desde que el pedido es recibido por el responsable (art. 14)</td></tr>
+  <tr><td>Rectificación, actualización o supresión</td><td>5 días hábiles desde el pedido (art. 16)</td></tr>
+</table>
+</div>
+
+<h3>Cómo ejercerlos</h3>
+<ul>
+  <li><strong>Para los datos que carga un club:</strong> escribinos a <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a> o dirigite directamente al club. Derivamos tu pedido al club dentro de 2 días hábiles y lo asistimos dentro de 3 días hábiles para que el club te responda dentro de los plazos legales.</li>
+  <li><strong>Para los datos de tu cuenta y los de contacto y facturación del club:</strong> te respondemos nosotros dentro de los plazos legales.</li>
+  <li>Podemos pedirte que acredites tu identidad. Los padres, madres o tutores pueden ejercer los derechos en nombre de los menores a su cargo.</li>
+</ul>
+
+<div class="highlight-box">
+  <p><strong>Leyenda de la ley:</strong> como titular de los datos personales, tenés la facultad de ejercer el derecho de acceso a ellos en forma gratuita a intervalos no inferiores a seis meses, salvo que acredites un interés legítimo al efecto, conforme el artículo 14, inciso 3, de la Ley 25.326. La Agencia de Acceso a la Información Pública, en su carácter de órgano de control de la Ley 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>
+</div>
+<p><span class="todo">[A COMPLETAR: confirmar con el abogado la redacción de esta leyenda en fuente oficial antes de publicar]</span></p>
+
+<h3>Si no estás conforme</h3>
+<p>Podés presentar una denuncia, que es gratuita y no requiere abogado, ante la <strong>Agencia de Acceso a la Información Pública (AAIP)</strong>, autoridad de aplicación de la Ley 25.326: <a href="https://www.argentina.gob.ar/aaip/datospersonales" target="_blank" rel="noopener">www.argentina.gob.ar/aaip/datospersonales</a>. También podés recurrir a la vía judicial del hábeas data.</p>
+
+<!-- 13 -->
+<h2 id="s13"><span class="section-num">13</span> Notificaciones, ubicación, cookies y analytics</h2>
+
+<h3>13.1 Notificaciones push</h3>
+<p>La app usa notificaciones push para convocatorias, eventos, recordatorios de pago y avisos del club.</p>
+<ul>
+  <li>Requieren tu permiso en el dispositivo y podés desactivarlas cuando quieras (iOS: Ajustes → Notificaciones; Android: Configuración → Aplicaciones). No son necesarias para usar RTMS.</li>
+  <li>Desde la app podés activar o desactivar todas las notificaciones push. No usamos notificaciones con fines publicitarios.</li>
+  <li>El token de tu dispositivo lo gestiona Expo para entregar las notificaciones.</li>
+</ul>
+
+<h3>13.2 Ubicación</h3>
+<p>La app no pide permiso de ubicación ni usa la ubicación de tu dispositivo. El pronóstico del clima usa la dirección del lugar del evento que carga el club.</p>
+
+<h3>13.3 Cookies y analytics del sitio</h3>
+<ul>
+  <li>No usamos cookies ni identificadores de publicidad ni de seguimiento publicitario.</li>
+  <li>El panel web usa almacenamiento local o cookies estrictamente necesarios para mantener tu sesión iniciada.</li>
+  <li>Las páginas legales no usan cookies ni herramientas de analytics. El sitio web institucional usa Google Analytics 4 para contar visitas, solo si aceptás las cookies de medición; no usa el píxel de Meta ni otras herramientas de publicidad</li>
+</ul>
+
+<!-- 14 -->
+<h2 id="s14"><span class="section-num">14</span> Registro Nacional de Bases de Datos</h2>
+
+<p>La Ley 25.326 prevé la inscripción de las bases de datos en el Registro Nacional de Bases de Datos de la AAIP. Cada club, como responsable de los datos de su comunidad, evalúa y cumple su obligación de inscripción. RTMS evalúa y gestiona la inscripción de las bases de las que es responsable. <span class="todo">[A COMPLETAR: estado y número de inscripción de RTMS, o aclaración de que está en trámite]</span> A pedido, RTMS entrega a los clubes la ficha técnica del servicio para ese trámite.</p>
+
+<!-- 15 -->
+<h2 id="s15"><span class="section-num">15</span> Cambios y adecuación a la normativa</h2>
+
+<ul>
+  <li>Cuando cambiemos esta política de manera significativa, actualizamos la fecha y la versión, te avisamos dentro de la app y, si el cambio es sustancial, con al menos 30 días de anticipación, de acuerdo con los Términos y Condiciones.</li>
+  <li>Si el cambio afecta el tratamiento de datos de menores, de datos de salud o de transferencias, se vuelve a pedir la autorización que corresponda. Seguir usando la app no reemplaza esa autorización.</li>
+  <li><strong>Adecuación a normativa futura:</strong> esta política se basa en la Ley 25.326 vigente. Si se sancionara una nueva ley de protección de datos personales o cambiaran las reglas de transferencias internacionales, adecuaremos esta política y el contrato con los clubes dentro de un plazo razonable y, mientras tanto, la interpretaremos de la manera más compatible con la nueva norma.</li>
+</ul>
+
+<!-- 16 -->
+<h2 id="s16"><span class="section-num">16</span> Contacto</h2>
+
+<p>Para consultas, ejercicio de derechos, eliminación de cuenta o reportes de incidentes de privacidad:</p>
+<ul>
+  <li><strong>Email:</strong> <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a></li>
+  <li><strong>Responsable de los datos de cuenta y facturación:</strong> Leonardo Ezequiel Deambrosi, CUIT 23-28324842-9, Vuelta de Obligado 3841, piso 2, departamento B, Ciudad Autónoma de Buenos Aires, Argentina.</li>
+  <li><strong>Horario de atención:</strong> lunes a viernes de 9 a 18 h (hora de Argentina).</li>
+</ul>
+<p>Las condiciones de uso de la plataforma están en los <a href="./terms.html">Términos y Condiciones de Uso</a>. La relación con tu club se rige además por el contrato de suscripción entre el club y RTMS.</p>
+
+<!-- 17 -->
+<h2 id="s17"><span class="section-num">17</span> Versión y cambios</h2>
+
+<div class="table-wrap">
+<table class="data-table">
+  <tr><th>Versión</th><th>Fecha</th><th>Cambios principales</th></tr>
+  <tr><td>1.2</td><td>16 de octubre de 2026</td><td>Se nombra a RTMS como prestador. Se definen los roles de responsable (club) y encargado (RTMS). Se reemplaza Render por Fly.io y se listan todos los subencargados con su país. Se agregan: transferencias internacionales a Brasil y Estados Unidos con cláusulas modelo; el consentimiento parental con ítems separados para salud e imagen; sección de inteligencia artificial (hoy no se usa); conservación por categoría; eliminación de cuenta; derechos con los plazos legales y reclamo ante la AAIP; incidentes como compromiso de aviso al club; ubicación, clima, cookies y analytics; registro de bases de datos. Se corrigen las referencias a normas y se elimina la remisión a documentos que no existían. Se vincula con los Términos y Condiciones de Uso v1.0.</td></tr>
+  <tr><td>1.1</td><td>Mayo de 2026</td><td>Versión anterior.</td></tr>
+</table>
+</div>
+<p>Podés pedir una copia de una versión anterior a <a href="mailto:rtms@ldg.com.ar">rtms@ldg.com.ar</a>.</p>
 
 <div class="footer-box">
-  <p><strong>RTMS — Rugby Team Manager System</strong> &nbsp;·&nbsp; Política de Privacidad v1.1 &nbsp;·&nbsp; Mayo 2026</p>
+  <p><strong>RTMS — Rugby Team Manager System</strong> &nbsp;·&nbsp; Política de Privacidad v1.2 &nbsp;·&nbsp; 16 de octubre de 2026 &nbsp;·&nbsp; <a href="./terms.html">Términos y Condiciones de Uso</a></p>
 </div>
 
 </body>
